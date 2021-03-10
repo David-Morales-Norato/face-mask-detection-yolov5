@@ -22,4 +22,4 @@ csv_final  = strings(cantidad_de_imagenes,1);
 for u = 1:cantidad_de_imagenes
     csv_final(u) = folder_path(u)+"/"+imagenes_path(u)+".jpg";
 end
-writematrix(csv_final,'archivos_usar.csv') 
+writematrix(csv_final,'nombre_imagenes_nuevo_dataset.csv') 

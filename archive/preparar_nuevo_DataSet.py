@@ -8,8 +8,8 @@ import cv2
 import os
 
 
-train_csv_path = "/home/santiago/Documentos/yolov5/yolov5/archive/new_train.csv"
-new_train_csv_path = "/home/santiago/Documentos/yolov5/yolov5/archive/nuevo_train.csv"
+train_csv_path = os.path.join("new_train.csv")
+new_train_csv_path = os.path.join("nuevo_train.csv")
 new_csv  = pd.DataFrame()
 train_csv = pd.read_csv(train_csv_path)
 
@@ -55,7 +55,7 @@ def create_object(root, class_obj, xmin_value, xmax_value, ymin_value, ymax_valu
 allowed_classes = ["face_with_mask", "face_no_mask"]
 
 def annotations_txt2xml(file_name, annotations_path, images_path, new_anotations_path,new_image_path,train_csv):
-    name_image = file_name.split("/")
+    name_image = file_name.split(os.path.sep)
     name_image = name_image[1]
     im_path = os.path.join(images_path, file_name)
     ano_path = annotations_path
@@ -105,19 +105,18 @@ def annotations_txt2xml(file_name, annotations_path, images_path, new_anotations
 
 
 
-new_anotations_path = "/home/santiago/Documentos/yolov5/yolov5/archive/final_annotations/"
-labels_path = "/home/santiago/Documentos/yolov5/yolov5/archive/newTrain/wider_face_split/wider_face_train_bbx_gt.txt"
-path = "/home/santiago/Documentos/yolov5/yolov5/archive/newTrain/WIDER_train/images/"
-name_image = "0--Parade/0_Parade_Parade_0_476.jpg"
-path_prueba_imagen = path+name_image
+new_anotations_path = os.path.join("final_annotations")
+labels_path = os.path.join("newTrain","wider_face_split","wider_face_train_bbx_gt.txt")
+path = os.path.join("newTrain","WIDER_train","images")
 
 
-new_images_path = "/home/santiago/Documentos/yolov5/yolov5/archive/final_images/"
+
+new_images_path = os.path.join("final_images")
 crear_carpetas(new_anotations_path)
 crear_carpetas(new_images_path)
 
 
-images_names = pd.read_csv('/home/santiago/Documentos/yolov5/yolov5/archive/nombre_imagenes_nuevo_dataset.csv').values
+images_names = pd.read_csv(os.path.join('nombre_imagenes_nuevo_dataset.csv')).values
 print("ANTES ",len(train_csv))
 contador = 0
 for indx, im_name in enumerate(images_names):
