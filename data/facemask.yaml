@@ -1,0 +1,5 @@
+train: Dataset/images/train/
+val:   Dataset/images/val/
+test: Dataset/images/test/
+nc : 2
+names: ['face_with_mask','face_no_mask']
