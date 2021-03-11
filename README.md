@@ -3,6 +3,9 @@
 
 ![Banner](images/banner.png)
 
+Presentación del proyecto:
+<iframe width="727" height="409" src="https://www.youtube.com/embed/cezkQbWax6Q?list=PLwvrmWPv_joKwG-6WbIGrAzwqOYmXHpWA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Se recomienda el uso de docker para la ejecución del proyecto, con la imagen de Pytorch y uso de cuda 11.1 si se ejecuta sobre una GPU NVIDIA
 
 <code>docker pull pytorch/pytorch:1.8.0-cuda11.1-cudnn8-devel</code>
